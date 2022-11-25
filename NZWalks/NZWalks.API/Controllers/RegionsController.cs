@@ -18,7 +18,7 @@ namespace NZWalks.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllRegions()
+        public async Task<IActionResult> GetAllRegions()
         {
             //var regions = new List<Region>()
             //{
@@ -44,7 +44,7 @@ namespace NZWalks.API.Controllers
             //    }
             //};
 
-            var regions = regionRepository.GetAll();
+            var regions = await regionRepository.GetAllAsync();
             ////Rerunt DTO Region
             //var regionsDTO = new List<Models.DTO.Region>();
             //regions.ToList().ForEach(region =>
